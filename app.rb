@@ -1,6 +1,7 @@
 require 'ramaze'
+require 'sequel'
 
-class TestApp < Ramaze::Controller
+class MainController < Ramaze::Controller
   
   engine :erubis
   layout :default
@@ -20,6 +21,11 @@ class TestApp < Ramaze::Controller
     str += '<br>helpers: ' + Ramaze::HelpersHelper.options.paths.to_s
   end
   
+end
+
+DB = Sequel.connect('sqlite://db/test.db')
+
+class Post < Sequel::Model
 end
 
 Ramaze.start :port => 8080
