@@ -3,8 +3,12 @@ require 'ramaze'
 class TestApp < Ramaze::Controller
   
   engine :erubis
+  layout :default
   
   def index
+  end
+  
+  def mypage
   end
   
   def options
